@@ -1,2 +1,2 @@
 
-FLASK_KEY = "11111"
+FLASK_KEY = "12345"

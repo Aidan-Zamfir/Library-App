@@ -28,6 +28,6 @@ venv/
 
 instance/
 .webassets-cache
-secrets.py
+/secrets.py
 
 .idea/
