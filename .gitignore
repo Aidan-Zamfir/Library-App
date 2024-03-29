@@ -33,3 +33,5 @@ instance/
 .DS_Store
 .o
 .env
+
+/website/auth.py
