@@ -28,7 +28,6 @@ venv/
 
 instance/
 .webassets-cache
-/secrets.py
 
 .idea/
 .DS_Store
