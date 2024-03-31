@@ -16,13 +16,13 @@ class Library(db.Model):
     book_name = db.Column(db.String(150))
     total_time = db.Column(db.Integer)
     user_id = db.Column(db.Integer, db.ForeignKey('user.user_id')) #lowercase when reference class name (table in db)
-    book = db.relationship('Book', backref='library') #capital
+    # book = db.relationship('Book', backref='library') #capital
 
 class User(db.Model, UserMixin):
     user_id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(150), unique=True)
     user_name = db.Column(db.String(150))
-    user_pass = db.Column(db.String(150))
+    password1 = db.Column(db.String(150))
     library = db.relationship('Library') #capital
-    book = db.relationship('Book', backref='user') #capital
+    # book = db.relationship('Book', backref='user') #capital
 
