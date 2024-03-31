@@ -34,4 +34,4 @@ instance/
 .o
 .env
 
-/website/auth.py
+
