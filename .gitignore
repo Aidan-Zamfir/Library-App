@@ -35,3 +35,4 @@ instance/
 .env
 
 /website/database.db
+/website/auth.py
