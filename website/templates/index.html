@@ -1,6 +1,9 @@
 {% extends "base.html" %} {% block title %}Home{% endblock %} <!-- inherits structure from base.html -->
 {% block content %}
-    <h1>This is a header for the HOME page</h1>
+    <h1>HOMEPAGE</h1>
+    <a href="{{ url_for('auth.sign_up') }}">
+        <button>Sign Up</button> <!-- Temp button - saves time-->
+    </a>
 {% endblock %} <!-- specifies where to insert content (override base.html) -->
 
 <!--
