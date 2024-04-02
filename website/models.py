@@ -11,7 +11,7 @@ class User(db.Model, UserMixin):
     user_id = db.Column("user_id", db.Integer, primary_key=True)
     user_name = db.Column("user_name", db.String(300), unique=True, nullable=False)
     email = db.Column("email", db.String(150), unique=True, nullable=False)
-    password = db.Column("password", db.String(300), nullable=False)
+    # password = db.Column("password", db.String(300), nullable=False)
     books = db.relationship('Book', secondary=user_book, backref='user_id')
 
 class Book(db.Model):
