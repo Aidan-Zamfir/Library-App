@@ -18,7 +18,7 @@ def create_app():
     app.register_blueprint(views, url_prefix='/')
     app.register_blueprint(auth, url_prefix='/')
 
-
+    #check if databse already exists, if not: create it
     from .models import User, Book
     with app.app_context():
         if not path.exists("website/" + DB_NAME):

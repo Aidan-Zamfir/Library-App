@@ -2,6 +2,9 @@ from . import db #from current package (website folder) import db (found in init
 from flask_login import UserMixin
 from datetime import datetime
 
+#Database models: 2 models -> User and Book, 1 table -> link many-to-many
+
+
 user_book = db.Table('user_book',
     db.Column('user_id', db.Integer, db.ForeignKey('user.user_id'), primary_key=True),
     db.Column('book_id', db.Integer, db.ForeignKey("book.book_id"), primary_key=True)
@@ -11,7 +14,7 @@ class User(db.Model, UserMixin):
     user_id = db.Column("user_id", db.Integer, primary_key=True)
     user_name = db.Column("user_name", db.String(300), unique=True, nullable=False)
     email = db.Column("email", db.String(150), unique=True, nullable=False)
-    # password = db.Column("password", db.String(300), nullable=False)
+    # password = db.Column("password", db.String(300), nullable=False) #removed because was not being recognized by API
     books = db.relationship('Book', secondary=user_book, backref='user_id')
 
 class Book(db.Model):
@@ -19,8 +22,10 @@ class Book(db.Model):
     pages_read = db.Column("pages_read", db.Integer)
     time_read = db.Column("reading_time", db.Integer)
     date = db.Column("date", db.DateTime, nullable=False, default=datetime.utcnow)
-    # user_id = db.Column(db.Integer, db.ForeignKey('user.user_id'), nullable=False)
+    # user_id = db.Column(db.Integer, db.ForeignKey('user.user_id'), nullable=False) #this is raising an error - fix later
 
+
+#dont need library table, can just query data and display to UI: remove when functionality fully built
 
 # class Library(db.Model): #not m-t-m
 #     book_id = db.Column("book_id", db.Integer, primary_key=True)

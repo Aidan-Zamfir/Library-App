@@ -1,3 +1,5 @@
+<!-- Sign up page template: user data-entry field-->
+
 {% extends "base.html" %} {% block title %}Signup{% endblock %}
 {% block content %}
 <form method="POST">
@@ -18,6 +20,7 @@
                name="user_name"
                placeholder="Enter user name">
     </div>
+    <!-- password currently not being entered to db -->
     <div class="form-group">
         <label for="password">password</label>
         <input type="password"
