@@ -36,3 +36,4 @@ instance/
 
 /website/database.db
 /website/auth.py
+/website/test.py
