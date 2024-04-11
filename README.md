@@ -15,6 +15,4 @@ make a mobile app_
 - [ ] Reading date/time tracker UI
 - [ ] Finish homepage
 - [ ] Connect database
-
-
-
+- [ ] Custom CSS/JS (after backend)
