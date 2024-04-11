@@ -23,17 +23,3 @@ class Book(db.Model):
     time_read = db.Column("reading_time", db.Integer)
     date = db.Column("date", db.DateTime, nullable=False, default=datetime.utcnow)
     # user_id = db.Column(db.Integer, db.ForeignKey('user.user_id'), nullable=False) #this is raising an error - fix later
-
-
-#dont need library table, can just query data and display to UI: remove when functionality fully built
-
-# class Library(db.Model): #not m-t-m
-#     book_id = db.Column("book_id", db.Integer, primary_key=True)
-#     book_name = db.Column("book_name", db.String(150))
-#     total_time = db.Column("reading_time", db.Integer)
-
-
-#add to libaray byt searching for values in book & user: then inset the data
-
-# time spent reading & date data into graphical rep of reading history
-# for USER, get every LOG on DATE
