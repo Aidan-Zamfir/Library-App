@@ -6,16 +6,16 @@ from datetime import datetime
 
 
 user_book = db.Table('user_book',
-    db.Column('user_id', db.Integer, db.ForeignKey('user.user_id'), primary_key=True),
+    db.Column('id', db.Integer, db.ForeignKey('user.id'), primary_key=True),
     db.Column('book_id', db.Integer, db.ForeignKey("book.book_id"), primary_key=True)
 )
 
 class User(db.Model, UserMixin):
-    user_id = db.Column("user_id", db.Integer, primary_key=True)
+    id = db.Column("id", db.Integer, primary_key=True)
     user_name = db.Column("user_name", db.String(300), unique=True, nullable=False)
     email = db.Column("email", db.String(150), unique=True, nullable=False)
     # password = db.Column("password", db.String(300), nullable=False) #removed because was not being recognized by API
-    books = db.relationship('Book', secondary=user_book, backref='user_id')
+    books = db.relationship('Book', secondary=user_book, backref='id')
 
 class Book(db.Model):
     book_id = db.Column('book_id', db.Integer, primary_key=True)
