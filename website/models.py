@@ -14,7 +14,7 @@ class User(db.Model, UserMixin):
     id = db.Column("id", db.Integer, primary_key=True)
     user_name = db.Column("user_name", db.String(300), unique=True, nullable=False)
     email = db.Column("email", db.String(150), unique=True, nullable=False)
-    password = db.Column("password", db.String(300), nullable=False) #removed because was not being recognized by API
+    password = db.Column("password", db.String(300), nullable=False)
     books = db.relationship('Book', secondary=user_book, backref='id')
 
 class Book(db.Model):
@@ -22,4 +22,4 @@ class Book(db.Model):
     pages_read = db.Column("pages_read", db.Integer)
     time_read = db.Column("reading_time", db.Integer)
     date = db.Column("date", db.DateTime, nullable=False, default=datetime.utcnow)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False) #this is raising an error - fix later
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
