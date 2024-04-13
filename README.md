@@ -11,7 +11,7 @@ make a mobile app_
 
 ### TO DO:
 
-- [ ] Fix password functionality
+- [x] Fix password functionality
 - [ ] Reading date/time tracker UI
 - [ ] Finish homepage
 - [ ] Connect database
