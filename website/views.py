@@ -12,3 +12,7 @@ def home():
 @login_required
 def library():
     return render_template("library.html")
+
+@views.route('/new_user')
+def new_user():
+    return render_template("new_user.html")
