@@ -7,6 +7,7 @@ db = SQLAlchemy() #initialize database
 DB_NAME = "database.db"
 
 def create_app():
+    #
     app = Flask(__name__)
     app.config['SECRET_KEY'] = '123' # yes I know
     app.config["SQLALCHEMY_DATABASE_URI"] = f'sqlite:///{DB_NAME}'
@@ -24,6 +25,7 @@ def create_app():
         if not path.exists("website/" + DB_NAME):
             db.create_all()
 
+    #login manager
     login_manager = LoginManager()
     login_manager.login_view = 'auth.login'
     login_manager.init_app(app)
