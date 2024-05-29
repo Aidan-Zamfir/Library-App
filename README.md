@@ -7,7 +7,7 @@ genres, time spent / averages and more.
 
 _This is just a portfolio project - in the future 
 I would like to recreate this in swift and 
-make a mobile app_
+make a mobile app.
 
 ### TO DO:
 
